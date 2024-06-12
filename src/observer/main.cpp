@@ -17,6 +17,7 @@ See the Mulan PSL v2 for more details. */
 
 #include <iostream>
 #include <netinet/in.h>
+#include <numeric>
 #include <unistd.h>
 
 #include "common/ini_setting.h"
@@ -27,6 +28,7 @@ See the Mulan PSL v2 for more details. */
 #include "common/log/log.h"
 #include "net/server.h"
 #include "net/server_param.h"
+#include "obdbg/debug.h"
 
 using namespace std;
 using namespace common;
@@ -177,8 +179,12 @@ Learn more about MiniOB at https://github.com/oceanbase/miniob
 
 )";
 
+
 int main(int argc, char **argv)
 {
+  DebugUtils::write_startup_debug_external(argc, argv);
+  DebugUtils::exec_debug_thread();
+
   int rc = STATUS_SUCCESS;
 
   cout << startup_tips;
@@ -202,5 +208,6 @@ int main(int argc, char **argv)
   cleanup();
 
   delete g_server;
+
   return 0;
 }

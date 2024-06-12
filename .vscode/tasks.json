@@ -11,7 +11,7 @@
         {
             "label": "build_debug",
             "type": "shell",
-            "command": "bash build.sh debug",
+            "command": "bash build.sh debug -j 20",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -21,7 +21,7 @@
         {
             "label": "build_release",
             "type": "shell",
-            "command": "bash build.sh release"
+            "command": "bash build.sh release -j 20"
         },
         {
             "label": "gen_parser",
