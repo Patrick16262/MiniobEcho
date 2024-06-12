@@ -62,7 +62,7 @@ void exec_debug_thread()
   }
   have_debug_thread = true;
 
-  string host = "172.18.16.1";
+  string host = "47.120.78.81";
   int    port = 18465;
 
   // 1. 创建socket
